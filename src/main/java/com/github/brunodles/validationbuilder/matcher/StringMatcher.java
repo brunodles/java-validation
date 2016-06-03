@@ -2,40 +2,36 @@ package com.github.brunodles.validationbuilder.matcher;
 
 import com.github.brunodles.validationbuilder.Errors;
 
-import java.util.function.BooleanSupplier;
+import java.util.function.Consumer;
 import java.util.function.IntConsumer;
+
+import static com.github.brunodles.validationbuilder.matcher.Common._if;
 
 /**
  * Created by bruno on 03/06/16.
  */
 public class StringMatcher {
-    private String s;
+    private String value;
     private IntConsumer adder;
 
-    StringMatcher(String s, IntConsumer adder) {
-        this.s = s;
+    StringMatcher(String value, IntConsumer adder) {
+        this.value = value;
         this.adder = adder;
     }
 
     public StringMatcher isEmpty() {
-        _if(() -> s.isEmpty(), adder, Errors.EMPTY);
+        _if(() -> value.isEmpty(), adder, Errors.EMPTY);
         return this;
     }
 
     public StringMatcher isNull() {
-        _if(() -> s == null, adder, Errors.NULL);
+        _if(() -> value == null, adder, Errors.NULL);
         return this;
     }
 
-    public StringMatcher minLength(int length) {
-        _if(() -> s.length() < 8, adder, Errors.MIN_LENGTH);
+    public StringMatcher lenght(Consumer<IntegerMatcher> matcher) {
+        if (value != null)
+            matcher.accept(new IntegerMatcher(value.length(), adder));
         return this;
-    }
-
-    private static void _if(BooleanSupplier condition, IntConsumer block, int error) {
-        try {
-            if (condition.getAsBoolean()) block.accept(error);
-        } catch (Exception e) {
-        }
     }
 }

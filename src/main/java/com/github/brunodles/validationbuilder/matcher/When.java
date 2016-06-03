@@ -16,4 +16,8 @@ public class When {
     public StringMatcher when(String s) {
         return new StringMatcher(s, adder);
     }
+
+    public IntegerMatcher when(Integer i) {
+        return new IntegerMatcher(i, adder);
+    }
 }
