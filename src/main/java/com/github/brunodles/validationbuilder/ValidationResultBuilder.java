@@ -1,5 +1,7 @@
 package com.github.brunodles.validationbuilder;
 
+import com.github.brunodles.validationbuilder.matcher.When;
+
 import java.util.HashMap;
 import java.util.function.IntConsumer;
 
@@ -13,14 +15,14 @@ public class ValidationResultBuilder implements ValidationResult {
         errorMap = new HashMap<>();
     }
 
-    public IntConsumer adder(String key) {
-        return error -> add(key, error);
-    }
-
     public void add(String key, int error) {
         Integer errors = errorsFrom(key);
         errors |= error;
         errorMap.put(key, errors);
+    }
+
+    public IntConsumer adder(String key) {
+        return error -> add(key, error);
     }
 
     private Integer errorsFrom(String key) {
@@ -37,5 +39,9 @@ public class ValidationResultBuilder implements ValidationResult {
     public boolean contains(String key, int error) {
         Integer errors = errorsFrom(key);
         return (errors & error) == error;
+    }
+
+    public When addTo(String key) {
+        return new When(adder(key));
     }
 }

@@ -4,7 +4,6 @@ import com.github.brunodles.oleaster_suite_runner.OleasterSuiteRunner;
 import org.junit.runner.RunWith;
 
 import static com.github.brunodles.validationbuilder.Errors.*;
-import static com.github.brunodles.validationbuilder.matcher.MatcherHelper.when;
 import static com.mscharhag.oleaster.matcher.Matchers.expect;
 import static com.mscharhag.oleaster.runner.StaticRunnerSupport.*;
 
@@ -23,12 +22,15 @@ public class MainTest {
             before(() -> {
                 validator = new SampleValidator();
             });
-            describe("when validate", () -> {
-                describe("when pass a null value", () -> {
-                    it("should throw NullPointerException", () -> {
-                        expect(() -> validator.validate(null)).toThrow(NullPointerException.class);
-                    });
+
+            describe("when pass a null value", () -> {
+                it("should throw NullPointerException", () -> {
+                    expect(() -> validator.validate(null)).toThrow(NullPointerException.class);
                 });
+            });
+
+            describe("when validate a String field", () -> {
+
                 describe("when pass a object with null values", () -> {
                     before(() -> {
                         validation = validator.validate(new SampleClass());
@@ -95,10 +97,7 @@ public class MainTest {
         @Override
         public ValidationResult validate(SampleClass object) {
             ValidationResultBuilder errors = new ValidationResultBuilder();
-            when(object.name)
-                    .isNull(() -> errors.add("name", NULL))
-                    .isEmpty(() -> errors.add("name", EMPTY))
-                    .minLength(8, () -> errors.add("name", MIN_LENGTH));
+            errors.addTo("name").when(object.name).isNull().isEmpty().minLength(8);
             return errors;
         }
     }
