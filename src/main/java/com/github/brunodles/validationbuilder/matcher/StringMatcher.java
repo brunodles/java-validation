@@ -10,7 +10,7 @@ import static com.github.brunodles.validationbuilder.matcher.Common._if;
 /**
  * Created by bruno on 03/06/16.
  */
-public class StringMatcher {
+public class StringMatcher implements ObjectMatcher<StringMatcher>, EqualsMatcher<String, StringMatcher> {
     private String value;
     private IntConsumer adder;
 
@@ -24,6 +24,7 @@ public class StringMatcher {
         return this;
     }
 
+    @Override
     public StringMatcher isNull() {
         _if(() -> value == null, adder, Errors.NULL);
         return this;
@@ -32,6 +33,12 @@ public class StringMatcher {
     public StringMatcher lenght(Consumer<IntegerMatcher> matcher) {
         if (value != null)
             matcher.accept(new IntegerMatcher(value.length(), adder));
+        return this;
+    }
+
+    @Override
+    public StringMatcher isEqualsTo(String expected) {
+        _if(() -> value.equals(expected), adder, Errors.EQUAL);
         return this;
     }
 }

@@ -3,9 +3,8 @@ package com.github.brunodles.validationbuilder.matcher;
 /**
  * Created by bruno on 03/06/16.
  */
-public interface NumberMatcher<T extends Number, SubClass extends NumberMatcher> {
-
-    SubClass isEqualsTo(T expected);
+public interface NumberMatcher<T extends Number, SubClass extends NumberMatcher>
+        extends EqualsMatcher<T, SubClass> {
 
     SubClass isGreater(T expected);
 
