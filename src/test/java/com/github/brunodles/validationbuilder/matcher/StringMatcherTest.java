@@ -1,7 +1,7 @@
 package com.github.brunodles.validationbuilder.matcher;
 
-import com.github.brunodles.oleaster_suite_runner.OleasterSuiteRunner;
 import com.github.brunodles.validationbuilder.Errors;
+import com.mscharhag.oleaster.runner.OleasterRunner;
 import org.junit.runner.RunWith;
 
 import java.util.function.IntConsumer;
@@ -13,7 +13,7 @@ import static org.mockito.Mockito.*;
 /**
  * Created by bruno on 04/06/16.
  */
-@RunWith(OleasterSuiteRunner.class)
+@RunWith(OleasterRunner.class)
 public class StringMatcherTest {
 
     private IntConsumer adder;

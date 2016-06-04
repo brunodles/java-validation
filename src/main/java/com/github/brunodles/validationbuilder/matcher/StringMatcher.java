@@ -10,7 +10,8 @@ import static com.github.brunodles.validationbuilder.matcher.Common._if;
 /**
  * Created by bruno on 03/06/16.
  */
-public class StringMatcher implements ObjectMatcher<StringMatcher>, EqualsMatcher<String, StringMatcher> {
+public class StringMatcher implements ObjectMatcher<String, StringMatcher>,
+        EqualsMatcher<String, StringMatcher> {
     private String value;
     private IntConsumer adder;
 

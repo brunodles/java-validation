@@ -20,4 +20,8 @@ public class When {
     public IntegerMatcher when(Integer i) {
         return new IntegerMatcher(i, adder);
     }
+
+    public <T> ObjectMatcher<T, ?> when(final T object) {
+        return new ObjectMatcherImpl<T>(object, adder);
+    }
 }

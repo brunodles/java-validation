@@ -11,7 +11,7 @@ import static com.github.brunodles.validationbuilder.matcher.Common._if;
  */
 class NumberMatcherImpl<T extends Number & Comparable,
         SubClass extends NumberMatcherImpl>
-        implements NumberMatcher<T, SubClass>, ObjectMatcher<SubClass> {
+        implements NumberMatcher<T, SubClass>, ObjectMatcher<T, SubClass> {
     private T value;
     private IntConsumer adder;
 
