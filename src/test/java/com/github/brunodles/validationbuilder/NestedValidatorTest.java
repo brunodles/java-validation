@@ -40,8 +40,8 @@ public class NestedValidatorTest {
             b.addTo("longField").when(object.longField).isEqualsTo(0L);
             b.addTo("nestedObject.intField").nested(object.nestedObject)
                     .when(o -> o.intField).isGreater(5);
-            b.addTo("stringField").nested(() -> object.nestedObject.stringField)
-                    .when(String.class)
+            b.addTo("stringField").nested(object.nestedObject)
+                    .when(o -> o.stringField).isNull().isEmpty();
         }
     }
 }
