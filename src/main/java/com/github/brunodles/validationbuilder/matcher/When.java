@@ -21,6 +21,18 @@ public class When {
         return new IntegerMatcher(i, adder);
     }
 
+    public LongMatcher when(Long i) {
+        return new LongMatcher(i, adder);
+    }
+
+    public FloatMatcher when(Float i) {
+        return new FloatMatcher(i, adder);
+    }
+
+    public DoubleMatcher when(Double i) {
+        return new DoubleMatcher(i, adder);
+    }
+
     public <T> ObjectMatcher<T, ?> when(final T object) {
         return new ObjectMatcherImpl<T>(object, adder);
     }
