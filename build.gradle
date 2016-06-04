@@ -1,5 +1,5 @@
 group 'com.github.brunodles'
-version '0.2'
+version '0.3'
 
 apply plugin: 'maven'
 apply plugin: 'java'
