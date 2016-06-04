@@ -1,6 +1,6 @@
 package com.github.brunodles.validationbuilder;
 
-import com.github.brunodles.oleaster_suite_runner.OleasterSuiteRunner;
+import com.mscharhag.oleaster.runner.OleasterRunner;
 import org.junit.runner.RunWith;
 
 import static com.github.brunodles.validationbuilder.Errors.*;
@@ -10,7 +10,7 @@ import static com.mscharhag.oleaster.runner.StaticRunnerSupport.*;
 /**
  * Created by bruno on 03/06/16.
  */
-@RunWith(OleasterSuiteRunner.class)
+@RunWith(OleasterRunner.class)
 public class MainTest {
 
     private SampleValidator validator;
@@ -117,14 +117,11 @@ public class MainTest {
         int strikeCount;
     }
 
-    private static class SampleValidator implements Validator<SampleClass> {
-
+    private static class SampleValidator extends ValidatorBase<SampleClass> {
         @Override
-        public ValidationResult validate(SampleClass object) {
-            ValidationResultBuilder errors = new ValidationResultBuilder();
-            errors.addTo("name").when(object.name).isNull().isEmpty().lenght(i -> i.isLower(8));
-            errors.addTo("strikeCount").when(object.strikeCount).isNull().isGreater(6);
-            return errors;
+        void validate(SampleClass object, ValidationResultBuilder builder) {
+            builder.addTo("name").when(object.name).isNull().isEmpty().lenght(i -> i.isLower(8));
+            builder.addTo("strikeCount").when(object.strikeCount).isNull().isGreater(6);
         }
     }
 }

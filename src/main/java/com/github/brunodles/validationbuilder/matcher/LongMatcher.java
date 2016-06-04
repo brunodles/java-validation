@@ -5,9 +5,8 @@ import java.util.function.IntConsumer;
 /**
  * Created by bruno on 03/06/16.
  */
-public class IntegerMatcher extends NumberMatcherImpl<Integer, IntegerMatcher> {
-
-    public IntegerMatcher(Integer value, IntConsumer adder) {
+public class LongMatcher extends NumberMatcherImpl<Long, LongMatcher> {
+    public LongMatcher(Long value, IntConsumer adder) {
         super(value, adder);
     }
 }
