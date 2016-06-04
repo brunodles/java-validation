@@ -54,7 +54,7 @@ public class StringMatcherTest {
                     itShouldNotCallAdder();
                 });
                 describe("when call Lenght isEqualTo 0", () -> {
-                    beforeEach(() -> matcher.lenght(l -> l.isEqualsTo(0)));
+                    beforeEach(() -> matcher.length(l -> l.isEqualsTo(0)));
                     itShouldCallAdderWith("EQUAL", Errors.EQUAL);
                 });
             });
@@ -77,11 +77,11 @@ public class StringMatcherTest {
                     itShouldNotCallAdder();
                 });
                 describe("when call Lenght isEqualTo 16", () -> {
-                    beforeEach(() -> matcher.lenght(l -> l.isEqualsTo(16)));
+                    beforeEach(() -> matcher.length(l -> l.isEqualsTo(16)));
                     itShouldCallAdderWith("EQUAL", Errors.EQUAL);
                 });
                 describe("when call Lenght isLower 16", () -> {
-                    beforeEach(() -> matcher.lenght(l -> l.isLower(16)));
+                    beforeEach(() -> matcher.length(l -> l.isLower(16)));
                     itShouldNotCallAdder();
                 });
             });

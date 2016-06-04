@@ -31,7 +31,7 @@ public class StringMatcher implements ObjectMatcher<String, StringMatcher>,
         return this;
     }
 
-    public StringMatcher lenght(Consumer<IntegerMatcher> matcher) {
+    public StringMatcher length(Consumer<IntegerMatcher> matcher) {
         if (value != null)
             matcher.accept(new IntegerMatcher(value.length(), adder));
         return this;
