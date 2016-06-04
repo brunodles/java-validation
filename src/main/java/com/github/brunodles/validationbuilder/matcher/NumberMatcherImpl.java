@@ -9,8 +9,8 @@ import static com.github.brunodles.validationbuilder.matcher.Common._if;
 /**
  * Created by bruno on 03/06/16.
  */
-class NumberMatcherImpl<T extends Number & Comparable, S extends NumberMatcher & ObjectMatcher>
-        implements NumberMatcher<T, S>, ObjectMatcher<S> {
+class NumberMatcherImpl<T extends Number & Comparable, SubClass extends NumberMatcher & ObjectMatcher>
+        implements NumberMatcher<T, SubClass>, ObjectMatcher<SubClass> {
     private T value;
     private IntConsumer adder;
 
@@ -20,27 +20,27 @@ class NumberMatcherImpl<T extends Number & Comparable, S extends NumberMatcher &
     }
 
     @Override
-    public S isEqualsTo(T expected) {
+    public SubClass isEqualsTo(T expected) {
         _if(() -> value.equals(expected), adder, Errors.EQUAL);
-        return (S) this;
+        return (SubClass) this;
     }
 
     @Override
-    public S isGreater(T expected) {
+    public SubClass isGreater(T expected) {
         _if(() -> gt(expected), adder, Errors.GREATER);
-        return (S) this;
+        return (SubClass) this;
     }
 
     @Override
-    public S isLower(T expected) {
+    public SubClass isLower(T expected) {
         _if(() -> lt(expected), adder, Errors.LOWER);
-        return (S) this;
+        return (SubClass) this;
     }
 
     @Override
-    public S isBetween(T min, T max) {
+    public SubClass isBetween(T min, T max) {
         _if(() -> bt(min, max), adder, Errors.BETWEEN);
-        return (S) this;
+        return (SubClass) this;
     }
 
     public boolean gt(T expected) {
@@ -56,8 +56,8 @@ class NumberMatcherImpl<T extends Number & Comparable, S extends NumberMatcher &
     }
 
     @Override
-    public S isNull() {
+    public SubClass isNull() {
         _if(() -> value == null, adder, Errors.NULL);
-        return (S) this;
+        return (SubClass) this;
     }
 }

@@ -3,13 +3,13 @@ package com.github.brunodles.validationbuilder.matcher;
 /**
  * Created by bruno on 03/06/16.
  */
-public interface NumberMatcher<T extends Number, S extends NumberMatcher> {
+public interface NumberMatcher<T extends Number, SubClass extends NumberMatcher> {
 
-    S isEqualsTo(T expected);
+    SubClass isEqualsTo(T expected);
 
-    S isGreater(T expected);
+    SubClass isGreater(T expected);
 
-    S isLower(T expected);
+    SubClass isLower(T expected);
 
-    S isBetween(T min, T max);
+    SubClass isBetween(T min, T max);
 }
