@@ -20,23 +20,37 @@ public class StringMatcher implements ObjectMatcher<String, StringMatcher>,
         this.adder = adder;
     }
 
+    /**
+     * Check if the reference String is empty
+     */
     public StringMatcher isEmpty() {
         _if(() -> value.isEmpty(), adder, Errors.EMPTY);
         return this;
     }
 
+    /**
+     * Check if the reference String is null
+     */
     @Override
     public StringMatcher isNull() {
         _if(() -> value == null, adder, Errors.NULL);
         return this;
     }
 
+    /**
+     * Check if the length of the reference String is matching
+     * @param matcher a {@link IntegerMatcher} will passed as parameter to the {@param matcher}
+     */
     public StringMatcher length(Consumer<IntegerMatcher> matcher) {
         if (value != null)
             matcher.accept(new IntegerMatcher(value.length(), adder));
         return this;
     }
 
+    /**
+     * Check if the reference String is equals to {@param expected}
+     * @param expected another string to be compared
+     */
     @Override
     public StringMatcher isEqualsTo(String expected) {
         _if(() -> value.equals(expected), adder, Errors.EQUAL);

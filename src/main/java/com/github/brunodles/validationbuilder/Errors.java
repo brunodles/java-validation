@@ -1,6 +1,7 @@
 package com.github.brunodles.validationbuilder;
 
 /**
+ * Just a contant list of the errors
  * Created by bruno on 03/06/16.
  */
 public class Errors {

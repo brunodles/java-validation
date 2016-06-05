@@ -19,22 +19,36 @@ public class BooleanMatcher implements ObjectMatcher<Boolean, BooleanMatcher> {
         this.adder = adder;
     }
 
-    public BooleanMatcher isTrue(){
+    /**
+     * Check if the reference value is true
+     */
+    public BooleanMatcher isTrue() {
         _if(() -> value, adder, Errors.TRUE);
         return this;
     }
 
-    public BooleanMatcher isFalse(){
+    /**
+     * Check if the reference value is false
+     */
+    public BooleanMatcher isFalse() {
         _if(() -> !value, adder, Errors.FALSE);
         return this;
     }
 
+    /**
+     * Check if the reference value is null
+     */
     @Override
     public BooleanMatcher isNull() {
         _if(() -> value == null, adder, Errors.NULL);
         return this;
     }
 
+    /**
+     * Check if the reference value is equals to {@param expected}
+     *
+     * @param expected another boolean
+     */
     @Override
     public BooleanMatcher isEqualsTo(Boolean expected) {
         _if(() -> value.equals(expected), adder, Errors.EQUAL);
