@@ -18,7 +18,7 @@ public interface ValidationResult {
      *
      * @param key   normaly is used the field name
      * @param error the error from {@link Errors}
-     * @return true if the {@param key} contains the {@param error}
+     * @return true if the key contains the error
      */
     boolean contains(String key, int error);
 }

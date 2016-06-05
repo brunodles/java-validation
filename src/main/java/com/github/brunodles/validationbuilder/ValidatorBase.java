@@ -2,7 +2,7 @@ package com.github.brunodles.validationbuilder;
 
 /**
  * This class is intent to be used to simplify the implementation of the Validator.
- * To use it you just need to implement the method {@link #validate(T, ValidationResultBuilder)}.
+ * To use it you just need to implement the method validate.
  * <p>
  * Created by bruno on 03/06/16.
  */

@@ -22,6 +22,8 @@ public class StringMatcher implements ObjectMatcher<String, StringMatcher>,
 
     /**
      * Check if the reference String is empty
+     *
+     * @return the current object, to be used as a builder
      */
     public StringMatcher isEmpty() {
         _if(() -> value.isEmpty(), adder, Errors.EMPTY);
@@ -30,6 +32,8 @@ public class StringMatcher implements ObjectMatcher<String, StringMatcher>,
 
     /**
      * Check if the reference String is null
+     *
+     * @return the current object, to be used as a builder
      */
     @Override
     public StringMatcher isNull() {
@@ -39,7 +43,9 @@ public class StringMatcher implements ObjectMatcher<String, StringMatcher>,
 
     /**
      * Check if the length of the reference String is matching
-     * @param matcher a {@link IntegerMatcher} will passed as parameter to the {@param matcher}
+     *
+     * @param matcher a {@link IntegerMatcher} will passed as parameter to the Consumer
+     * @return the current object, to be used as a builder
      */
     public StringMatcher length(Consumer<IntegerMatcher> matcher) {
         if (value != null)
@@ -48,8 +54,10 @@ public class StringMatcher implements ObjectMatcher<String, StringMatcher>,
     }
 
     /**
-     * Check if the reference String is equals to {@param expected}
+     * Check if the reference String is equals to expected
+     *
      * @param expected another string to be compared
+     * @return the current object, to be used as a builder
      */
     @Override
     public StringMatcher isEqualsTo(String expected) {

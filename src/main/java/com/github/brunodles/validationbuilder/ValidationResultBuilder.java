@@ -64,7 +64,7 @@ public class ValidationResultBuilder implements ValidationResult {
      *
      * @param key   the same key used on {@link #add}
      * @param error the error from {@link Errors}
-     * @return true if the {@param key} contains the {@param error}
+     * @return true if the key contains the error
      */
     @Override
     public boolean contains(String key, int error) {

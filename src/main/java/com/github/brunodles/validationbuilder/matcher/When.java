@@ -56,6 +56,7 @@ public class When {
 
     /**
      * @param object a Object to be the reference value
+     * @param <T>    Don't need to worry with this parameter it will be auto inferred by compiler
      * @return a {@link ObjectMatcher}
      */
     public <T> ObjectMatcher<T, ?> when(final T object) {

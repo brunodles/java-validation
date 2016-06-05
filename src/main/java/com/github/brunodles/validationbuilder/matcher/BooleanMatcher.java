@@ -21,6 +21,8 @@ public class BooleanMatcher implements ObjectMatcher<Boolean, BooleanMatcher> {
 
     /**
      * Check if the reference value is true
+     *
+     * @return the current object, to be used as a builder
      */
     public BooleanMatcher isTrue() {
         _if(() -> value, adder, Errors.TRUE);
@@ -29,6 +31,8 @@ public class BooleanMatcher implements ObjectMatcher<Boolean, BooleanMatcher> {
 
     /**
      * Check if the reference value is false
+     *
+     * @return the current object, to be used as a builder
      */
     public BooleanMatcher isFalse() {
         _if(() -> !value, adder, Errors.FALSE);
@@ -37,6 +41,8 @@ public class BooleanMatcher implements ObjectMatcher<Boolean, BooleanMatcher> {
 
     /**
      * Check if the reference value is null
+     *
+     * @return the current object, to be used as a builder
      */
     @Override
     public BooleanMatcher isNull() {
@@ -45,9 +51,10 @@ public class BooleanMatcher implements ObjectMatcher<Boolean, BooleanMatcher> {
     }
 
     /**
-     * Check if the reference value is equals to {@param expected}
+     * Check if the reference value is equals to expected
      *
      * @param expected another boolean
+     * @return the current object, to be used as a builder
      */
     @Override
     public BooleanMatcher isEqualsTo(Boolean expected) {
