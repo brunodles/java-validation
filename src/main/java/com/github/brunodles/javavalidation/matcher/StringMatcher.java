@@ -1,11 +1,11 @@
-package com.github.brunodles.validationbuilder.matcher;
+package com.github.brunodles.javavalidation.matcher;
 
-import com.github.brunodles.validationbuilder.Errors;
+import com.github.brunodles.javavalidation.Errors;
 
 import java.util.function.Consumer;
 import java.util.function.IntConsumer;
 
-import static com.github.brunodles.validationbuilder.matcher.Common._if;
+import static com.github.brunodles.javavalidation.matcher.Common._if;
 
 /**
  * Created by bruno on 03/06/16.

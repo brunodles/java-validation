@@ -1,6 +1,6 @@
-package com.github.brunodles.validationbuilder.matcher;
+package com.github.brunodles.javavalidation.matcher;
 
-import com.github.brunodles.validationbuilder.Errors;
+import com.github.brunodles.javavalidation.Errors;
 import com.mscharhag.oleaster.runner.OleasterRunner;
 import org.junit.runner.RunWith;
 

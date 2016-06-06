@@ -1,4 +1,4 @@
-package com.github.brunodles.validationbuilder.matcher;
+package com.github.brunodles.javavalidation.matcher;
 
 import com.mscharhag.oleaster.runner.Invokable;
 

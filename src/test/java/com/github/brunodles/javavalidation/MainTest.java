@@ -1,9 +1,9 @@
-package com.github.brunodles.validationbuilder;
+package com.github.brunodles.javavalidation;
 
 import com.mscharhag.oleaster.runner.OleasterRunner;
 import org.junit.runner.RunWith;
 
-import static com.github.brunodles.validationbuilder.Errors.*;
+import static com.github.brunodles.javavalidation.Errors.*;
 import static com.mscharhag.oleaster.matcher.Matchers.expect;
 import static com.mscharhag.oleaster.runner.StaticRunnerSupport.*;
 
