@@ -2,9 +2,14 @@ language: java
 
 jdk:
  - oraclejdk8
+ - oraclejdk6
 
 before_install:
  - chmod +x gradlew
 
 
-script: ./gradlew build test
+script:
+ - jdk_switcher use oraclejdk6
+ - export JAVA6_home=$JAVA_HOME
+ - jdk_switcher use oraclejdk8
+ - ./gradlew build test
