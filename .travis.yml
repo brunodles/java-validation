@@ -1,7 +1,11 @@
 language: java
 
+jdk:
+ - oraclejdk8
+
 before_install:
  - chmod +x gradlew
+ - export JAVA8_home=$JAVA_HOME
 
 script:
  - jdk_switcher use oraclejdk7
