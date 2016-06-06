@@ -47,6 +47,12 @@ public class MainTest {
                     it("should not add LOWER on name errors", () -> {
                         expect(validation.contains("name", LOWER)).toBeFalse();
                     });
+                    it("should contain the key", () -> {
+                        expect(validation.contains("name")).toBeTrue();
+                    });
+                    it("should add the \"name\" as a key in \"keys\" method", () -> {
+                        expect(validation.keys().contains("name")).toBeTrue();
+                    });
                 });
                 describe("when pass a object with empty values", () -> {
                     before(() -> {

@@ -2,7 +2,10 @@ package com.github.brunodles.validationbuilder;
 
 import com.github.brunodles.validationbuilder.matcher.When;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.function.IntConsumer;
 
 /**
@@ -70,6 +73,16 @@ public class ValidationResultBuilder implements ValidationResult {
     public boolean contains(String key, int error) {
         Integer errors = errorsFrom(key);
         return (errors & error) == error;
+    }
+
+    @Override
+    public boolean contains(String key) {
+        return errorsFrom(key) != 0;
+    }
+
+    @Override
+    public List<String> keys() {
+        return Collections.unmodifiableList(new ArrayList<>(errorMap.keySet()));
     }
 
     /**
