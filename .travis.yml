@@ -6,9 +6,12 @@ jdk:
 before_install:
  - chmod +x gradlew
  - export JAVA8_home=$JAVA_HOME
-
-script:
  - jdk_switcher use oraclejdk7
  - export JAVA7_home=$JAVA_HOME
  - jdk_switcher use oraclejdk8
+ - echo $JAVA7_HOME
+ - echo $JAVA8_HOME
+ - echo $JAVA_HOME
+
+script:
  - ./gradlew build test
