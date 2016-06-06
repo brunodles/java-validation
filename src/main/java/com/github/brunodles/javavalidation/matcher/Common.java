@@ -1,4 +1,4 @@
-package com.github.brunodles.validationbuilder.matcher;
+package com.github.brunodles.javavalidation.matcher;
 
 import java.util.function.BooleanSupplier;
 import java.util.function.IntConsumer;

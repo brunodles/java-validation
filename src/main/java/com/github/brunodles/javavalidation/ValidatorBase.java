@@ -1,4 +1,4 @@
-package com.github.brunodles.validationbuilder;
+package com.github.brunodles.javavalidation;
 
 /**
  * This class is intent to be used to simplify the implementation of the Validator.
