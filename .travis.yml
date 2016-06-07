@@ -5,7 +5,7 @@ jdk:
 
 env:
   global:
-    - JAVA7_HOME=/usr/lib/jvm/java-7-oracle
+    - JAVA7_HOME=/usr/lib/jvm/java-8-oracle
     - JAVA8_HOME=/usr/lib/jvm/java-8-oracle
 
 before_install:
