@@ -10,9 +10,4 @@ env:
 before_install:
  - chmod +x gradlew
 
-script:
- - jdk_switcher use oraclejdk7
- - echo $JAVA_HOME
- - jdk_switcher use oraclejdk8
- - echo $JAVA_HOME
- - ./gradlew build test
+script: ./gradlew build test
