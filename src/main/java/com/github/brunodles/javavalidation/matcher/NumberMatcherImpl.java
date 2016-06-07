@@ -1,8 +1,7 @@
 package com.github.brunodles.javavalidation.matcher;
 
 import com.github.brunodles.javavalidation.Errors;
-
-import java.util.function.IntConsumer;
+import com.github.brunodles.retrofunctions.IntConsumer;
 
 import static com.github.brunodles.javavalidation.matcher.Common._if;
 
@@ -48,7 +47,7 @@ class NumberMatcherImpl<T extends Number & Comparable,
         return value.compareTo(expected) > 0;
     }
 
-    public boolean lt( T expected) {
+    public boolean lt(T expected) {
         return value.compareTo(expected) < 0;
     }
 

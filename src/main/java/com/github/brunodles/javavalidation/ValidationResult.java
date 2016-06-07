@@ -34,6 +34,7 @@ public interface ValidationResult {
 
     /**
      * All keys that have errors
+     *
      * @return a list with all keys
      */
     List<String> keys();

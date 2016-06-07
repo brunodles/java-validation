@@ -1,12 +1,12 @@
 package com.github.brunodles.javavalidation;
 
 import com.github.brunodles.javavalidation.matcher.When;
+import com.github.brunodles.retrofunctions.IntConsumer;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.function.IntConsumer;
 
 /**
  * This builder will be used inside the validator to create all validations.

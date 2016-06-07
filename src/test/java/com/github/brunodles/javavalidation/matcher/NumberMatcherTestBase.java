@@ -1,8 +1,7 @@
 package com.github.brunodles.javavalidation.matcher;
 
+import com.github.brunodles.retrofunctions.IntConsumer;
 import com.mscharhag.oleaster.runner.Invokable;
-
-import java.util.function.IntConsumer;
 
 import static com.mscharhag.oleaster.runner.StaticRunnerSupport.*;
 import static org.mockito.Mockito.*;
@@ -10,7 +9,6 @@ import static org.mockito.Mockito.*;
 /**
  * Created by bruno on 03/06/16.
  */
-//@RunWith(OleasterSuiteRunner.class)
 public abstract class NumberMatcherTestBase<T extends Number, Y extends NumberMatcher<T, ?>> {
 
     protected Y matcher;

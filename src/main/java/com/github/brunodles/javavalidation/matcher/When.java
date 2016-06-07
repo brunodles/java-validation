@@ -1,6 +1,6 @@
 package com.github.brunodles.javavalidation.matcher;
 
-import java.util.function.IntConsumer;
+import com.github.brunodles.retrofunctions.IntConsumer;
 
 /**
  * This will take the fields and return a matcher for it's value

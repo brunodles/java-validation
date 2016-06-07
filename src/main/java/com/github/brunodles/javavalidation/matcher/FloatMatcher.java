@@ -1,6 +1,6 @@
 package com.github.brunodles.javavalidation.matcher;
 
-import java.util.function.IntConsumer;
+import com.github.brunodles.retrofunctions.IntConsumer;
 
 /**
  * Created by bruno on 03/06/16.

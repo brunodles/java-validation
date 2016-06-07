@@ -1,9 +1,8 @@
 package com.github.brunodles.javavalidation.matcher;
 
 import com.github.brunodles.javavalidation.Errors;
-
-import java.util.function.Consumer;
-import java.util.function.IntConsumer;
+import com.github.brunodles.retrofunctions.Consumer;
+import com.github.brunodles.retrofunctions.IntConsumer;
 
 import static com.github.brunodles.javavalidation.matcher.Common._if;
 
