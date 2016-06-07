@@ -16,6 +16,7 @@ and on your project dependencies:
 
 ```gradle
 dependencies {
-    compile 'com.github.brunodles:PicPicker:{latest version}'
+    compile 'com.github.brunodles:java-validation:{latest version}'
 }
 ```
+Take a look into (releases)[https://github.com/brunodles/java-validation/releases]
