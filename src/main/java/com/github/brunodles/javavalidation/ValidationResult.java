@@ -1,4 +1,4 @@
-package com.github.brunodles.validationbuilder;
+package com.github.brunodles.javavalidation;
 
 import java.util.List;
 

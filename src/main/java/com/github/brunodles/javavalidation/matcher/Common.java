@@ -1,8 +1,7 @@
-package com.github.brunodles.validationbuilder.matcher;
+package com.github.brunodles.javavalidation.matcher;
 
 import com.github.brunodles.retrofunctions.BooleanSupplier;
 import com.github.brunodles.retrofunctions.IntConsumer;
-
 
 /**
  * Created by bruno on 03/06/16.

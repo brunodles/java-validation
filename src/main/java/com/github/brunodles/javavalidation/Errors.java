@@ -1,4 +1,4 @@
-package com.github.brunodles.validationbuilder;
+package com.github.brunodles.javavalidation;
 
 /**
  * Just a contant list of the errors

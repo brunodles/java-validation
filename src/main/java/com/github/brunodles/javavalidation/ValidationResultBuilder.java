@@ -1,7 +1,7 @@
-package com.github.brunodles.validationbuilder;
+package com.github.brunodles.javavalidation;
 
+import com.github.brunodles.javavalidation.matcher.When;
 import com.github.brunodles.retrofunctions.IntConsumer;
-import com.github.brunodles.validationbuilder.matcher.When;
 
 import java.util.ArrayList;
 import java.util.Collections;
