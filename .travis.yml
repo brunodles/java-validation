@@ -2,15 +2,17 @@ language: java
 
 jdk:
  - oraclejdk8
- - oraclejdk7
+
+env:
+ - JAVA7_HOME=/usr/lib/jvm/java-7-oracle
+ - JAVA8_HOME=/usr/lib/jvm/java-8-oracle
 
 before_install:
  - chmod +x gradlew
- - export JAVA7_HOME=/usr/lib/jvm/java-7-oracle
- - export JAVA8_HOME=/usr/lib/jvm/java-8-oracle
- - echo $JAVA7_HOME
- - echo $JAVA8_HOME
- - echo $JAVA_HOME
 
 script:
+ - jdk_switcher use oraclejdk7
+ - echo $JAVA_HOME
+ - jdk_switcher use oraclejdk8
+ - echo $JAVA_HOME
  - ./gradlew build test
