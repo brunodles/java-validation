@@ -1,11 +1,9 @@
 package com.github.brunodles.validationbuilder.matcher;
 
-import com.github.brunodles.oleaster_suite_runner.OleasterSuiteRunner;
+import com.github.brunodles.retrofunctions.IntConsumer;
 import com.github.brunodles.validationbuilder.Errors;
 import com.mscharhag.oleaster.runner.OleasterRunner;
 import org.junit.runner.RunWith;
-
-import java.util.function.IntConsumer;
 
 import static com.mscharhag.oleaster.runner.StaticRunnerSupport.*;
 import static org.mockito.Matchers.eq;

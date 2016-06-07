@@ -1,8 +1,7 @@
 package com.github.brunodles.validationbuilder.matcher;
 
+import com.github.brunodles.retrofunctions.IntConsumer;
 import com.mscharhag.oleaster.runner.Invokable;
-
-import java.util.function.IntConsumer;
 
 import static com.mscharhag.oleaster.runner.StaticRunnerSupport.*;
 import static org.mockito.Mockito.*;

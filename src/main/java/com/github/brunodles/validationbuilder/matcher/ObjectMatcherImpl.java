@@ -1,8 +1,7 @@
 package com.github.brunodles.validationbuilder.matcher;
 
+import com.github.brunodles.retrofunctions.IntConsumer;
 import com.github.brunodles.validationbuilder.Errors;
-
-import java.util.function.IntConsumer;
 
 import static com.github.brunodles.validationbuilder.matcher.Common._if;
 
