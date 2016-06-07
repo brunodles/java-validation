@@ -6,9 +6,27 @@ jdk:
 branches:
   only:
     - master
+env:
+  global:
+    - JAVA7_HOME=/usr/lib/jvm/java-8-oracle
+    - JAVA8_HOME=/usr/lib/jvm/java-8-oracle
 
 before_install:
   - chmod +x gradlew
 
-
 script: ./gradlew build test
+
+before_deploy:
+  - git config --global user.email "builds@travis-ci.com"
+  - git config --global user.name "Travis CI"
+  - git tag $TRAVIS_TAG
+  - git push origin $TRAVIS_TAG
+
+deploy:
+  skip_cleanup: true
+  provider: releases
+  on:
+    tags: true
+
+notifications:
+  email: false
