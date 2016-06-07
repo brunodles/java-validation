@@ -24,3 +24,6 @@ deploy:
   provider: releases
   on:
     tags: true
+
+notifications:
+  email: false
