@@ -6,6 +6,7 @@ jdk:
 branches:
   only:
     - master
+
 env:
   global:
     - JAVA7_HOME=/usr/lib/jvm/java-8-oracle
@@ -19,14 +20,14 @@ script: ./gradlew build test
 before_deploy:
   - git config --global user.email "builds@travis-ci.com"
   - git config --global user.name "Travis CI"
-  - git tag $TRAVIS_TAG
-  - git push origin $TRAVIS_TAG
+  - export TAG=$(git log -1 | grep -Eo 'tag: ([0-9\.]+)' | cut -d" " -f2)
+  - if [ -n "$TAG" ]; then echo "$TAG">>.version && git commit -m "Prepare release $TAG" && git tag $TAG && git push origin $TAG && git push origin master; fi
 
 deploy:
   skip_cleanup: true
   provider: releases
   on:
-    tags: true
+    branch: master
 
 notifications:
   email: false
