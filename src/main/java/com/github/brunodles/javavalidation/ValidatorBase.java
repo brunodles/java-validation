@@ -14,5 +14,5 @@ public abstract class ValidatorBase<T> implements Validator<T> {
         return resultBuilder;
     }
 
-    abstract void validate(T object, ValidationResultBuilder resultBuilder);
+    protected abstract void validate(T object, ValidationResultBuilder resultBuilder);
 }
