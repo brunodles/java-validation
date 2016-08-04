@@ -1,5 +1,6 @@
-package com.github.brunodles.javavalidation;
-
+import com.github.brunodles.javavalidation.ValidationResult;
+import com.github.brunodles.javavalidation.ValidationResultBuilder;
+import com.github.brunodles.javavalidation.ValidatorBase;
 import com.mscharhag.oleaster.runner.OleasterRunner;
 import org.junit.runner.RunWith;
 
@@ -125,7 +126,7 @@ public class MainTest {
 
     private static class SampleValidator extends ValidatorBase<SampleClass> {
         @Override
-        void validate(SampleClass object, ValidationResultBuilder builder) {
+        protected void validate(SampleClass object, ValidationResultBuilder builder) {
             builder.addTo("name").when(object.name).isNull().isEmpty().length(i -> i.isLower(8));
             builder.addTo("strikeCount").when(object.strikeCount).isNull().isGreater(6);
         }
